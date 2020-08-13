@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Value</string>
+    <string name="text_to_Reg">Don\'t have an account? <b><font color='#03A9F4'>SIGN UP</font></b></string>
+    <string name="text_to_Login">Already have an account? <b><font color='#03A9F4'>SIGN IN</font></b></string>
+</resources>
