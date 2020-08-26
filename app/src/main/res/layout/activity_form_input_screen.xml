@@ -57,7 +57,7 @@
         android:id="@+id/et_input_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Date : mm-dd-yyyy"
+        android:hint="Date : 11 april 2011"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

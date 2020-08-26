@@ -8,4 +8,6 @@
     <color name="black">#000</color>
     <color name="colorapp">#39aefc</color>
     <color name="colordarkapp">#3BA4EA</color>
+    <color name="grey">#C0C0C0</color>
+    <color name="divider">#e6e6e6</color>
 </resources>
