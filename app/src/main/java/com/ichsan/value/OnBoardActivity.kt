@@ -15,7 +15,7 @@ import com.example.login.ParallaxTransformer
 import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.activity_on_board.*
 
-class OnBoardActivity : AppCompatActivity(), View.OnClickListener {
+class OnBoardActivity : BaseActivity(), View.OnClickListener {
 
     val mResources = intArrayOf(R.drawable.ic_easy, R.drawable.ic_fast, R.drawable.ic_free,R.drawable.ic_join)
     lateinit var adapter: SlidingPagerAdapter
@@ -73,6 +73,10 @@ class OnBoardActivity : AppCompatActivity(), View.OnClickListener {
 
     }
 
+    override fun clickListener() {
+        TODO("Not yet implemented")
+    }
+
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.next -> {
@@ -99,8 +103,7 @@ class OnBoardActivity : AppCompatActivity(), View.OnClickListener {
                     ).show()
                 }
 
-                val intentlog = Intent(this, LoginScreenActivity::class.java)
-                startActivity(intentlog)
+                baseStartActivity<LoginScreenActivity>(this)
             }
         }
     }

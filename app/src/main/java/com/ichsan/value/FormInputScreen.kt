@@ -8,7 +8,7 @@ import android.widget.Button
 import android.widget.EditText
 import kotlinx.android.synthetic.main.activity_form_input_screen.*
 
-class FormInputScreen : AppCompatActivity() {
+class FormInputScreen : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_form_input_screen)
@@ -39,6 +39,7 @@ class FormInputScreen : AppCompatActivity() {
             val etSos = sosEt.text.toString()
             val etDob = dobEt.text.toString()
             val intentSave = Intent(this, ProfileScreen::class.java)
+            baseStartActivity<FormInputScreen>(this)
 
             intentSave.putExtra("namePut", etName)
             intentSave.putExtra("genderPut", etGender)
@@ -52,9 +53,12 @@ class FormInputScreen : AppCompatActivity() {
             intentSave.putExtra("sosPut", etSos)
             intentSave.putExtra("dobPut", etDob)
 
-
             startActivity(intentSave)
 
         }
+    }
+
+    override fun clickListener() {
+
     }
 }

@@ -5,16 +5,20 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 
-class SplashScreenActivity : AppCompatActivity() {
+class SplashScreenActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
 
         var handler = Handler()
         handler.postDelayed({
-            val intent = Intent(this, OnBoardActivity::class.java)
-            startActivity(intent)
+            baseStartActivity<OnBoardActivity>(this)
             finish()
         }, 3000)//delaying 3 seconds to open login activity
     }
+
+    override fun clickListener() {
+
+    }
+
 }

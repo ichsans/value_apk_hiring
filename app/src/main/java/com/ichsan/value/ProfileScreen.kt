@@ -5,8 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.EditText
 import android.widget.TextView
-
-class ProfileScreen : AppCompatActivity() {
+class ProfileScreen : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile_screen)
@@ -54,5 +53,9 @@ class ProfileScreen : AppCompatActivity() {
         
 
 
+    }
+
+    override fun clickListener() {
+        TODO("Not yet implemented")
     }
 }

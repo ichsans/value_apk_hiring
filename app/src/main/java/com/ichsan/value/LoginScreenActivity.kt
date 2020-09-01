@@ -8,30 +8,32 @@ import android.widget.TextView
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_register_screen.*
 
-class LoginScreenActivity : AppCompatActivity() {
+class LoginScreenActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_screen)
 
+        clickListener()
+
+    }
+
+
+    override fun clickListener() {
         val btn_login = findViewById<Button>(R.id.btnLogin)
         val tvToReg = findViewById<TextView>(R.id.tvToReg)
 
-
-        val intent_login = Intent(this, FormInputScreen::class.java)
-
-
-
-
         btn_login.setOnClickListener {
             Toast.makeText(this, "Login Success!!!", Toast.LENGTH_SHORT).show()
-            startActivity(intent_login)
+            baseStartActivity<FormInputScreen>(this)
         }
 
         tvToReg.setOnClickListener {
 
-            val intentReg = Intent(this, RegisterScreenActivity::class.java)
-
-            startActivity(intentReg)
+            baseStartActivity<RegisterScreenActivity>(this)
         }
+
+
+
     }
+
 }

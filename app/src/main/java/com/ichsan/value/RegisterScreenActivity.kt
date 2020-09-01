@@ -7,19 +7,23 @@ import android.widget.Button
 import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_register_screen.*
 
-class RegisterScreenActivity : AppCompatActivity() {
+class RegisterScreenActivity : BaseActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register_screen)
 
+        clickListener()
 
-       val intentLog = Intent(this, LoginScreenActivity::class.java)
+    }
+
+    override fun clickListener() {
         val tvToLogin = findViewById<TextView>(R.id.tvToLogin)
-
-
         tvToLogin.setOnClickListener {
-            startActivity(intentLog)
+            baseStartActivity<LoginScreenActivity>(this)
 
         }
     }
+
+
 }
