@@ -1,23 +1,24 @@
-package com.ichsan.value
+package com.ichsan.value.OnBoard
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
-import com.example.login.IntroPage
-import com.example.login.ParallaxTransformer
 import com.google.android.material.tabs.TabLayout
+import com.ichsan.value.common.BaseActivity
+import com.ichsan.value.login.LoginScreenActivity
+import com.ichsan.value.R
 import kotlinx.android.synthetic.main.activity_on_board.*
 
 class OnBoardActivity : BaseActivity(), View.OnClickListener {
 
-    val mResources = intArrayOf(R.drawable.ic_easy, R.drawable.ic_fast, R.drawable.ic_free,R.drawable.ic_join)
+    val mResources = intArrayOf(R.drawable.ic_easy,
+        R.drawable.ic_fast,
+        R.drawable.ic_free,
+        R.drawable.ic_join)
     lateinit var adapter: SlidingPagerAdapter
     var currentTab = 0
     var tabCount = 0
@@ -110,6 +111,7 @@ class OnBoardActivity : BaseActivity(), View.OnClickListener {
 }
 
 
+@Suppress("DEPRECATION")
 class SlidingPagerAdapter(fragmentManager: FragmentManager?, val mResources: IntArray) : FragmentPagerAdapter(
     fragmentManager!!
 ) {

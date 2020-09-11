@@ -1,9 +1,7 @@
-package com.example.login
+package com.ichsan.value.OnBoard
 
-import android.graphics.Color.alpha
 import android.view.View
 import android.widget.ImageView
-import androidx.core.view.ViewCompat.*
 import androidx.viewpager.widget.ViewPager
 import com.ichsan.value.R
 

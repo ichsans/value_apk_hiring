@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileScreen"
+    tools:context=".screen.profile.ProfileScreen"
     >
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
 
         <ImageView
             android:id="@+id/imageView"
@@ -81,6 +83,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_country"
         />
+        <Button
+            android:id="@+id/btnGithub"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="To My Github"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_address"/>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_edu"
@@ -91,7 +101,7 @@
         app:cardCornerRadius="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_address">
+        app:layout_constraintTop_toBottomOf="@+id/btnGithub">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -253,7 +263,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_title_birth"
         app:layout_constraintBottom_toBottomOf="parent"/>
-
+        <Button
+            android:id="@+id/logout"
+            android:layout_width="153dp"
+            android:layout_height="62dp"
+            android:fontFamily="@font/nunito_sans_bold"
+            android:layout_marginRight="16dp"
+            android:background="@color/design_default_color_error"
+            android:text="Logout"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_dob" />
 
         <Button
             android:id="@+id/button"
@@ -272,3 +294,4 @@
 
 
     </ScrollView>
+</layout>

@@ -1,4 +1,4 @@
-package com.example.login
+package com.ichsan.value.OnBoard
 
 
 import android.os.Bundle

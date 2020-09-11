@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.ichsan.value">
+    package="com.ichsan.value" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -8,14 +11,15 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launche_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".OnBoardActivity"></activity>
-        <activity android:name=".ProfileScreen" />
-        <activity android:name=".FormInputScreen" />
-        <activity android:name=".RegisterScreenActivity" />
-        <activity android:name=".LoginScreenActivity" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".SplashScreenActivity">
+        android:theme="@style/AppTheme" >
+        <activity android:name=".main.MainActivity" />
+        <activity android:name=".OnBoard.OnBoardActivity" />
+        <activity android:name=".webview.GithubWebViewActivity" />
+        <activity android:name=".screen.profile.ProfileScreen" />
+        <activity android:name=".data.FormInputScreen" />
+        <activity android:name=".login.RegisterScreenActivity" />
+        <activity android:name=".login.LoginScreenActivity" />
+        <activity android:name=".common.SplashScreenActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
