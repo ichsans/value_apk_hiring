@@ -3,28 +3,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/profileFragment">
-
+    app:startDestination="@id/homeFragment">
     <fragment
-        android:id="@+id/nav_home"
-        android:name="com.ichsan.latihanandroid1.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
-
+        android:id="@+id/homeFragment"
+        android:name="com.ichsan.value.screen.home.HomeFragment"
+        tools:layout="@layout/fragment_home"
+        android:label="HomeFragment" />
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.ichsan.latihanandroid1.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
-
+        android:id="@+id/offerFragment"
+        android:name="com.ichsan.value.screen.offer.OfferFragment"
+        tools:layout="@layout/fragment_offer"
+        android:label="OfferFragment" />
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.ichsan.latihanandroid1.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/recyclerFragment"
+        android:name="com.ichsan.value.screen.project.RecyclerFragment"
+        tools:layout="@layout/fragment_recycle"
+        android:label="RecyclerFragment" />
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.ichsan.value.screen.profile.ProfileFragment"
-        android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile"
+        android:label="ProfileFragment" />
 </navigation>

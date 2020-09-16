@@ -21,38 +21,23 @@ private lateinit var binding : ActivityMain2Binding
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main2)
 
-        loadFragment(HomeFragment())
+        makeCurrent(HomeFragment())
 
-        binding.bottomNavigation.setOnNavigationItemSelectedListener {
-            when(it.itemId){
-                R.id.home-> {
-                    loadFragment(HomeFragment())
-                    return@setOnNavigationItemSelectedListener true
-                }
+    button_navigation_view.setOnNavigationItemSelectedListener {
+    when(it.itemId){
+        R.id.home -> makeCurrent(HomeFragment())
+        R.id.offer -> makeCurrent(OfferFragment())
+        R.id.project -> makeCurrent(RecyclerFragment())
+        R.id.profile -> makeCurrent(ProfileFragment())
+    }
+    return@setOnNavigationItemSelectedListener true
+}
 
-                R.id.offer-> {
-                    loadFragment(OfferFragment())
-                    return@setOnNavigationItemSelectedListener true
-                }
-                R.id.project-> {
-                    loadFragment(RecyclerFragment())
-                    return@setOnNavigationItemSelectedListener true
-                }
-                R.id.profile-> {
-                    loadFragment(ProfileFragment())
-                    return@setOnNavigationItemSelectedListener true
-                }
-
-            }
-            false
+    }
+    private fun makeCurrent (fragment:Fragment){
+        supportFragmentManager.beginTransaction().apply{
+            replace(R.id.fragment,fragment)
+            commit()
         }
-
-
-
     }
-    private fun loadFragment(fragment: Fragment) {
-        supportFragmentManager.beginTransaction().replace(
-            R.id.container, fragment).commit()
-    }
-
 }

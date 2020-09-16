@@ -3,16 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-        <group android:checkableBehavior="single">
         <item
             android:id="@+id/profileFragment"
             android:title="Faq" />
         <item
             android:id="@+id/helpFragment"
             android:title="Help" />
-                <item
-                    android:id="@+id/aboutusFragment"
-                    android:title="About US" />
-        </group>
+        <item
+            android:id="@+id/aboutusFragment"
+            android:title="About US" />
+
 
 </menu>

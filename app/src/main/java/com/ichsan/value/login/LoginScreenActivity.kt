@@ -7,6 +7,7 @@ import androidx.databinding.DataBindingUtil
 import com.ichsan.value.R
 import com.ichsan.value.common.BaseActivity
 import com.ichsan.value.data.Constant
+import com.ichsan.value.data.Constant.Companion.PREF_IS_LOGIN
 import com.ichsan.value.data.SheredPreferenceHelper
 import com.ichsan.value.databinding.ActivityLoginScreenBinding
 import com.ichsan.value.main.MainActivity
@@ -41,23 +42,31 @@ sharedPref = SheredPreferenceHelper(this)
     override fun clickListener() {
 
         binding.btnLogin.setOnClickListener {
-           if (et_email.text.isNotEmpty() && et_pass.text.isNotEmpty()){
-               sharedPref.put(Constant.PREF_EMAIL, et_email.text.toString())
-               sharedPref.put(Constant.PREF_PASSWORD, et_pass.text.toString())
-               sharedPref.put(Constant.PREF_IS_LOGIN, true)
-               Toast.makeText(this, "Success Login", Toast.LENGTH_SHORT).show()
-               moveIntent()
-           }
-
+            if (et_email.text.isNotEmpty() && et_pass.text.isNotEmpty()) {
+                val email = et_email.text.toString()
+                val pass = et_pass.text.toString()
+                val emailReg = sharedPref.getString(Constant.PREF_EMAIL)
+                val passReg = sharedPref.getString(Constant.PREF_PASSWORD)
+                if (email == emailReg || pass == passReg) {
+                    sharedPref.put(PREF_IS_LOGIN, true)
+                    Toast.makeText(this, "Success Login", Toast.LENGTH_SHORT).show()
+                    moveIntent()
+                }else {
+                    binding.etEmail.error = "Email Salah"
+                    binding.etPass.error = "Password Salah"
+            }
+            } else {
+                binding.etEmail.error = "Email kosong"
+                binding.etPass.error = "Password kosong"
+            }
         }
 
-        binding.tvToReg.setOnClickListener {
+            binding.tvToReg.setOnClickListener {
 
-            baseStartActivity<RegisterScreenActivity>(this)
+                baseStartActivity<RegisterScreenActivity>(this)
+            }
+
+
         }
-
-
-
     }
 
-}

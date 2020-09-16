@@ -40,12 +40,13 @@ class RegisterScreenActivity : BaseActivity() {
     override fun clickListener() {
 
         btnReg.setOnClickListener {
-            if (et_email_reg.text.isNotEmpty() && et_pass.text.isNotEmpty()) {
-                sharedPref.put(Constant.PREF_USERNAME, et_email_reg.text.toString())
+            if (et_email_reg.text.isNotEmpty() && et_pass_reg.text.isNotEmpty()) {
+                sharedPref.put(Constant.PREF_EMAIL, et_email_reg.text.toString())
                 sharedPref.put(Constant.PREF_PASSWORD, et_pass_reg.text.toString())
-                sharedPref.put(Constant.PREF_IS_LOGIN, true)
                 Toast.makeText(this, "Success Register", Toast.LENGTH_SHORT).show()
-                moveIntent()
+            }else{
+                binding.etEmailReg.error = "Email Kosong"
+                binding.etPassReg.error = "Email Kosong"
             }
 
             binding.tvToLogin.setOnClickListener {

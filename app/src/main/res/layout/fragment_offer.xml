@@ -7,6 +7,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/colorapp"
     tools:context=".screen.offer.OfferFragment">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_profile"
+        android:layout_width="match_parent"
+        app:title="Offer"
+        app:titleTextColor="@color/white"
+        android:layout_height="?attr/actionBarSize"
+        android:backgroundTint="@color/colorAccent"
+        android:background="@color/colorapp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
         android:layout_width="match_parent"
